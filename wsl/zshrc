@@ -1,5 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH
+
+# IAR License Server files
+export IAR_LMS_SETTINGS_DIR=$HOME/.lms
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/liydu/.oh-my-zsh"
@@ -71,6 +74,7 @@ ZSH_THEME="agnoster"
 plugins=(
 	git
 	autojump
+    tmux
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -100,8 +104,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+# alias python="python3"
 
-# nvm-sh
+# Load NVM
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
@@ -238,6 +244,7 @@ git-config() {
 bk() {
     cp ~/.zshrc ~/dotfiles/wsl/zshrc
     # cp ~/.zsh_plugins.txt ~/dotfiles/wsl/zsh_plugins.txt
+    cp ~/.tmux.conf ~/dotfiles/wsl/tmux.conf
 }
 
 zsh_history_fix() {
