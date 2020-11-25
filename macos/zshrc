@@ -104,9 +104,10 @@ eval "$(pyenv init -)"
 
 # Proxy configuration
 getIp() {
-    export HOST_IP=$(ip route | grep default | awk '{print $3}')
-    export PROXY_SOCKS5="socks5://${HOST_IP}:6152"
-    export PROXY_HTTP="http://${HOST_IP}:6152"
+    # export HOST_IP=$(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}' )
+    export HOST_IP="127.0.0.1"
+    export PROXY_SOCKS5="socks5://${HOST_IP}:7890"
+    export PROXY_HTTP="http://${HOST_IP}:7890"
 }
 
 showIp() {
@@ -117,7 +118,7 @@ showIp() {
 }
 
 proxy_git() {
-    ssh_proxy="${HOST_IP}:6152"
+    ssh_proxy="${HOST_IP}:7890"
     git config --global http.https://github.com.proxy ${PROXY_HTTP}
     if ! grep -qF "Host github.com" ~/.ssh/config ; then
         echo "Host github.com" >> ~/.ssh/config
@@ -176,7 +177,6 @@ unproxy () {
     unset RSYNC_PROXY
     unset ALL_PROXY
     unset all_proxy
-    sudo rm /etc/apt/apt.conf.d/proxy.conf
     git config --global --unset http.https://github.com.proxy
     showIp
 }
