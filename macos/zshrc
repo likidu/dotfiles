@@ -1,8 +1,14 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/openssl@1.1/bin:$PATH
+export PYENV_ROOT="$HOME/.pyenv/versions/3.9.6"
+export PATH=$HOME/bin:/usr/local/bin:$PYENV_ROOT/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/liki/.oh-my-zsh"
+export ZSH="/Users/likidu/.oh-my-zsh"
+
+export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
+
+export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -97,10 +103,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias mb="arch -x86_64 brew"
-
-# pyenv
-eval "$(pyenv init -)"
 
 # Proxy configuration
 getIp() {
