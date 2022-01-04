@@ -6,7 +6,7 @@
 // For documentation on these settings, see: https://aka.ms/terminal-documentation
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "defaultProfile": "{b453ae62-4e3d-5e58-b989-0a998ec441b7}",
     // You can add more global application settings here.
     // To learn more about global settings, visit https://aka.ms/terminal-global-settings
     // If enabled, selections are automatically copied to your clipboard.
@@ -55,7 +55,15 @@
                 "name": "Ubuntu-20.04",
                 "source": "Windows.Terminal.Wsl",
                 "startingDirectory": "//wsl$/Ubuntu-20.04/home/liya/Works"
-            }
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b7}",
+                "commandline": "\"%PROGRAMFILES%\\git\\bin\\bash.exe\" --login -i -l",
+                "fontFace": "Consolas",
+                "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+                "name": "Git Bash",
+                "tabTitle": "Git Bash"
+              }
         ]
     },
     // Add custom color schemes to this array.
