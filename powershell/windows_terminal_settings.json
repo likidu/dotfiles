@@ -24,7 +24,7 @@
             "acrylicOpacity": 0.85,
             "padding": "10, 10, 10, 10",
             "fontSize": 10,
-            "fontFace": "Cascadia Mono PL",
+            "fontFace": "MesloLGS NF, Cascadia Mono PL",
             "colorScheme": "Afterglow",
             "cursorShape": "filledBox"
             // "experimental.retroTerminalEffect": true
