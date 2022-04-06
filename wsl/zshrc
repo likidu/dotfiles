@@ -1,8 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH
 
-# IAR License Server files
-export IAR_LMS_SETTINGS_DIR=$HOME/.lms
+# Get WSL2 host IP address for apps such as OpenOCD
+# https://github.com/Marus/cortex-debug/issues/308#issuecomment-650214032
+export WSL_HOST_IP="$(cat /etc/resolv.conf | sed -rn 's|nameserver (.*)|\1|p')"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/liydu/.oh-my-zsh"
